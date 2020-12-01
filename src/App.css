@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+.cronometro-corpo {
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cronometro {
+    position: relative;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cronometro img {
+    z-index: 1;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.cronometro a {
+    color: #fff !important;
+    font-weight: bold;
+    font-size: 2.5rem;
 }
-
-.App-link {
-  color: #61dafb;
+.cronometro .contador {
+    z-index: 2;
+	position: absolute;
+	top: 35%;
+	transform: translateX(50%);
+	right: 50%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.controladores {
+    z-index: 2;
+	position: absolute;
+	top: 60%;
+	right: 50%;
+	transform: translateX(50%);
+}
+.controladores a {
+    font-size: 1.5rem;
+	margin: 0 20px;
+	border: 1px solid #fff;
+	border-radius: 10px;
+    padding: 10px;
+    transition: all ease .5s;
+    cursor: pointer;
+}
+.controladores a:hover {
+    transition: all ease .5s;
+    background-color: #fff;
+    border: 1px solid #00aeef;
+    color: #00aeef !important;
 }
