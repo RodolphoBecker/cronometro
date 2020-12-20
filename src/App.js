@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Cronometro from "./assets/cronometro.png";
 import './App.css';
-
 class App extends Component {
 
 	constructor(props){
@@ -14,12 +13,13 @@ class App extends Component {
 		}
 
 		this.timer = null;
-		this.iniciar = this.iniciar.bind(this);
-		this.zerar = this.zerar.bind(this);
 	};
 
-	iniciar(){
+	iniciar = (event) => {
+		event.preventDefault();
+
 		let state = this.state
+		
 		if(this.timer !== null){
 			clearInterval(this.timer);
 			this.timer = null;
@@ -32,10 +32,11 @@ class App extends Component {
 			},100);
 			state.botao = "Parar"
 		}
-		this.setState(state);
 	};
 
-	zerar(){
+	zerar = (event) => {
+		event.preventDefault();
+
 		if(this.timer !== null){
 			clearInterval(this.timer);
 			this.timer = null;
@@ -55,10 +56,10 @@ class App extends Component {
 						<div className="col-12 col-lg-4">
 							<div className="cronometro">
 								<img className="img-fluid" src={Cronometro} alt=""></img>
-									<a className="contador">{this.state.numero.toFixed(1)}</a>
+								<button className="contador">{this.state.numero.toFixed(1)}</button>
 								<div className="controladores">
-									<a onClick={this.iniciar}>{this.state.botao}</a>
-									<a onClick={this.zerar}>Zerar</a>
+									<button onClick={this.iniciar}>{this.state.botao}</button>
+									<button onClick={this.zerar}>Zerar</button>
 								</div>
 							</div>
 						</div>
