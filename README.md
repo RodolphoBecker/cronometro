@@ -1,3 +1,3 @@
 # React - Cronômetro 
 
-Simples aplicação em react que simula um cronômetro com as funcionalidades de iniciar, pausar e zerar o contador.
+Simple react application that simulates a timer with the functions of starting, pausing and resetting the counter.
